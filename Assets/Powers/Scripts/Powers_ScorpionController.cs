@@ -27,14 +27,21 @@ public class Powers_ScorpionController : MonoBehaviour
 
         int feetStepping = 0;
         int feetMoved = 0;
-        foreach (Powers_StickyFoot foot in feet)
-        {
+        foreach (Powers_StickyFoot foot in feet) {
             if (foot.isAnimating) feetStepping++;
             if (foot.footHasMoved) feetMoved++;
         }
-        foreach (Powers_StickyFoot foot in feet)
-        {
-            if (feetStepping < 4) foot.TryToStep();
+        if (feetMoved >= 8) {
+            foreach (Powers_StickyFoot foot in feet) {
+                foot.footHasMoved = false;
+            }
+        }
+        foreach (Powers_StickyFoot foot in feet) {
+            if (feetStepping < 4 ) {
+                if (foot.TryToStep()) {
+                    feetStepping++;
+                }
+            }
         }
     }
 

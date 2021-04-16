@@ -27,10 +27,9 @@ public class Powers_StickyFoot : MonoBehaviour
     Transform kneePole;
     public bool footHasMoved = false;
 
-    public bool isAnimating
-    {
+    public bool isAnimating {
         get {
-            (timeCurrent < timeLength);
+            return (timeCurrent < timeLength);
         }
     }
 

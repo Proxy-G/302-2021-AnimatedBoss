@@ -442,7 +442,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   footHasMoved: 0
-  isAnimating: 0
 --- !u!1 &229655519
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +896,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   footHasMoved: 0
-  isAnimating: 0
 --- !u!1 &889845098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,7 +1102,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   footHasMoved: 0
-  isAnimating: 0
 --- !u!1 &994434222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,7 +1748,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   footHasMoved: 0
-  isAnimating: 0
 --- !u!1 &1546707665
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,7 +2122,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   footHasMoved: 0
-  isAnimating: 0
 --- !u!1 &1656303295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2674,7 +2669,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   footHasMoved: 0
-  isAnimating: 0
 --- !u!1 &1800921314
 GameObject:
   m_ObjectHideFlags: 0
@@ -2994,7 +2988,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   footHasMoved: 0
-  isAnimating: 0
 --- !u!1 &1981310271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3171,7 +3164,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   footHasMoved: 0
-  isAnimating: 0
 --- !u!1 &2066825512
 GameObject:
   m_ObjectHideFlags: 0
@@ -3545,12 +3537,12 @@ MonoBehaviour:
   groundRing: {fileID: 1018031046}
   feet:
   - {fileID: 1981310276}
-  - {fileID: 1548363520}
-  - {fileID: 1498225621}
-  - {fileID: 1979937142}
   - {fileID: 229313570}
+  - {fileID: 1548363520}
   - {fileID: 892169397}
+  - {fileID: 1498225621}
   - {fileID: 806621768}
+  - {fileID: 1979937142}
   - {fileID: 1789622158}
 --- !u!1 &975076027145716331
 GameObject:
