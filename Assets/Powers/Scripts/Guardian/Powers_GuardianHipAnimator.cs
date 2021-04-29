@@ -30,10 +30,16 @@ public class Powers_GuardianHipAnimator : MonoBehaviour
         switch (guardian.state)
         {
             case Powers_GuardianController.States.Idle:
-                AnimateIdle();
+                AnimateIdle(); //Animate the hips idle
                 break;
             case Powers_GuardianController.States.Walk:
-                AnimateWalk();
+                AnimateWalk(); //Animate the hips walking
+                break;
+            case Powers_GuardianController.States.Run:
+                AnimateRun(); //Animate the hips running
+                break;
+            case Powers_GuardianController.States.Dead:
+                AnimateDead(); //Animate the players death
                 break;
         }
     }
@@ -45,15 +51,33 @@ public class Powers_GuardianHipAnimator : MonoBehaviour
         float roll = Mathf.Sin(time) * 3;
         float wiggle = Mathf.Sin(time) * .1f;
 
-        transform.localPosition = Powers_AnimMath.Slide(transform.localPosition, new Vector3(startingPos.x, startingPos.y - 0.001f - (wiggle*0.01f), startingPos.z), 0.01f);
-        transform.localRotation = Powers_AnimMath.Slide(transform.localRotation, Quaternion.Euler(0, 0, -5 + roll), 0.01f);
+        transform.localPosition = Powers_AnimMath.Slide(transform.localPosition, new Vector3(startingPos.x, startingPos.y - 0.0015f - (wiggle*0.01f), startingPos.z), 0.01f);
+        transform.localRotation = Powers_AnimMath.Slide(transform.localRotation, Quaternion.Euler(-1 - (roll/10), 0, 0), 0.01f);
     }
 
     void AnimateWalk()
     {
         float time = Time.time * guardian.stepSpeed;
         float roll = Mathf.Sin(time) * rollAmount;
+        float hipBounce = Mathf.Cos(time*2);
 
-        transform.localRotation = Powers_AnimMath.Slide(transform.localRotation, Quaternion.Euler(roll, 0, 0), 0.01f);
+        transform.localPosition = Powers_AnimMath.Slide(transform.localPosition, new Vector3(startingPos.x, startingPos.y - 0.001f - (hipBounce * 0.001f), startingPos.z), 0.01f);
+        transform.localRotation = Powers_AnimMath.Slide(transform.localRotation, Quaternion.Euler(-2.5f - (roll/5), 0, roll), 0.01f);
+    }
+
+    void AnimateRun()
+    {
+        float time = Time.time * guardian.stepSpeed;
+        float roll = Mathf.Sin(time) * rollAmount;
+        float hipBounce = Mathf.Cos(time * 2);
+
+        transform.localPosition = Powers_AnimMath.Slide(transform.localPosition, new Vector3(startingPos.x, startingPos.y - 0.0035f - (hipBounce * 0.002f), startingPos.z + (.004f)), 0.01f);
+        transform.localRotation = Powers_AnimMath.Slide(transform.localRotation, Quaternion.Euler(-8 - (roll / 3), 0, roll), 0.01f);
+    }
+
+    void AnimateDead()
+    {
+        transform.localPosition = Powers_AnimMath.Slide(transform.localPosition, startingPos, 0.01f);
+        transform.localRotation = Powers_AnimMath.Slide(transform.localRotation, startingRot, 0.01f);
     }
 }
